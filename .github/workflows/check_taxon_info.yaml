@@ -53,7 +53,10 @@ jobs:
       
       - name: Install remotes package
         run: Rscript -e 'install.packages("remotes")'
-        
+
+      - name: Install dependencies for parallel computing
+        run: Rscript -e 'install.packages(c("carrier", "mirai"))'
+
       - name: Install R packages
         run: |
           source("src/install_packages.R")
