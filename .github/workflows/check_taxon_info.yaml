@@ -6,6 +6,7 @@ on:
     - main
     paths:
     - src/**
+    - .github/workflows/check_taxon_info.yaml
   workflow_dispatch:
     branches: [ main ]
 
