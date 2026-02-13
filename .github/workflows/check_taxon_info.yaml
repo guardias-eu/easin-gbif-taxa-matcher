@@ -19,6 +19,10 @@ jobs:
 
     name: ubuntu-latest (R release)
 
+    permissions:
+      contents: write
+      pull-requests: write
+
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
