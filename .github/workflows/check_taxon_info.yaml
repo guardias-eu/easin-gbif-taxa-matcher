@@ -74,3 +74,14 @@ jobs:
         run: |
           source("tests/test_output_match.R")
         shell: Rscript {0}
+      
+      - name: Create pull request
+        uses: devops-infra/action-pull-request@v0.4.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          target_branch: main
+          title: "[AUTO] Update data"
+          template: .github/PULL_REQUEST_TEMPLATE.md
+          reviewer: damianooldoni
+          label: automated workflow
+          get_diff: false
