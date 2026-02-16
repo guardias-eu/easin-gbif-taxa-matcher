@@ -70,6 +70,11 @@ taxa_match <- taxa_match %>%
     )
   )
 
+# Remove `timeTaken` column ####
+# Values change constantly at each run and not relevant for version control
+taxa_match <- taxa_match %>%
+  dplyr::select(-timeTaken)
+
 # Save the taxa to a file ####
 readr::write_csv(
   x = taxa_match,
