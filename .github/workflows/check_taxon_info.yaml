@@ -59,7 +59,13 @@ jobs:
           source("src/match_easin_catalogue.R")
         shell: Rscript {0}
 
+      - name: Check for changes
+        id: verify_diff
+        run: |
+          git diff --quiet data/ || echo "changed=true" >> $GITHUB_OUTPUT
+
       - name: Commit and push changes
+        if: steps.verify_diff.outputs.changed == 'true'
         uses: devops-infra/action-commit-push@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
