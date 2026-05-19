@@ -36,7 +36,7 @@ test_that(
   {
     expect_equal(
       nrow(taxa),
-      15686
+      15688
     )
   }
 )
@@ -46,7 +46,7 @@ test_that(
   {
     expect_equal(
       nrow(taxa),
-      15686
+      15688
     )
     expect_equal(
       names(taxa),
