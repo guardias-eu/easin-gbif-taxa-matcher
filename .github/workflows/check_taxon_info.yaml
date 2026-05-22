@@ -67,7 +67,7 @@ jobs:
 
       - name: Commit and push changes
         if: steps.verify_diff.outputs.changed == 'true'
-        uses: devops-infra/action-commit-push@master
+        uses: devops-infra/action-commit-push@v1.2.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           commit_prefix: "[AUTO]"
@@ -81,7 +81,7 @@ jobs:
         shell: Rscript {0}
       
       - name: Create pull request
-        uses: devops-infra/action-pull-request@v1
+        uses: devops-infra/action-pull-request@v1.1.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           target_branch: main
