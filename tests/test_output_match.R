@@ -45,8 +45,8 @@ test_that(
   "EASIN Catalogue taxa has the same columns as the EASIN Catalogue taxa in `main`",
   {
     expect_equal(
-      nrow(taxa),
-      15685
+      ncol(taxa),
+      27
     )
     expect_equal(
       names(taxa),
