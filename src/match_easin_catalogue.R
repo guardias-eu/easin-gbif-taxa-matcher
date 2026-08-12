@@ -34,13 +34,13 @@ taxa <- taxa %>%
     kingdom = Kingdom
   )
 
-# Match taxa to GBIF ####
-# Use Catalogue of Life checklist, the new taxonomic backbone for GBIF
-# occurrences
+# Match taxa via GBIF using the Catalogue of Life (CoL) checklist ####
+COL_CHECKLIST_KEY <- "7ddf754f-d193-4cc9-b351-99906754a03b"
+
 taxa_match <- rgbif::name_backbone_checklist(
   taxa %>%
     dplyr::select(scientificName, kingdom, EASINID),
-  checklistKey = "7ddf754f-d193-4cc9-b351-99906754a03b",
+  checklistKey = COL_CHECKLIST_KEY,
   strict = TRUE
 )
 
